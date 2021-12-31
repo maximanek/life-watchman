@@ -11,6 +11,12 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Route;
+use Modules\User\Http\Controllers\UserController;
+
+Route::get('/home', [UserController::class ,'index'])->middleware(['auth'])->name('home');
+
 Route::prefix('user')->group(function() {
-    Route::get('/', 'UserController@index');
+
 });

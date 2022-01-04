@@ -11,6 +11,13 @@
 |
 */
 
-Route::prefix('finance')->group(function() {
-    Route::get('/', 'FinanceController@index');
+use Illuminate\Support\Facades\Route;
+use Modules\Finance\Http\Controllers\FinanceController;
+
+Route::prefix('finance')->name('finance.')->group(function() {
+
+
+    Route::get('/', [FinanceController::class, 'index'])->name('index');
+
+
 });

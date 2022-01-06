@@ -18,10 +18,4 @@ class FinanceMainCategory extends Model
     {
         return $this->hasMany(FinanceSubCategory::class);
     }
-
-
-//    protected static function newFactory()
-//    {
-//        return \Modules\Finance\Database\factories\FinanceMainCategoryFactory::new();
-//    }
 }

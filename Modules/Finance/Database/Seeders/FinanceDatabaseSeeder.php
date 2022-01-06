@@ -15,7 +15,7 @@ class FinanceDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        // $this->call("OthersTableSeeder");
+        $this->call(MainCategoryTableSeeder::class);
+        $this->call(SubCategoryTableSeeder::class);
     }
 }

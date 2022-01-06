@@ -18,6 +18,8 @@ Route::prefix('finance')->name('finance.')->group(function() {
 
 
     Route::get('/', [FinanceController::class, 'index'])->name('index');
+    Route::get('/create', [FinanceController::class, 'create'])->name('create');
+    Route::post('/create', [FinanceController::class, 'store']);
 
 
 });

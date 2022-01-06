@@ -27,7 +27,7 @@ class CashFlow extends Model
 
     public function financeSubCategory(): BelongsTo
     {
-        return $this->belongsTo(FinanceSubCategory::class);
+        return $this->belongsTo(FinanceSubCategory::class, 'sub_category_id', 'id');
     }
 
 //    protected static function newFactory()

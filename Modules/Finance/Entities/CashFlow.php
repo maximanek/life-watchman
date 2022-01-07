@@ -30,8 +30,4 @@ class CashFlow extends Model
         return $this->belongsTo(FinanceSubCategory::class, 'sub_category_id', 'id');
     }
 
-//    protected static function newFactory()
-//    {
-//        return \Modules\Finance\Database\factories\CashFlowFactory::new();
-//    }
 }

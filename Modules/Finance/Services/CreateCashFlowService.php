@@ -4,7 +4,7 @@ namespace Modules\Finance\Services;
 
 use Illuminate\View\View;
 
-class FinanceCreateService
+class CreateCashFlowService
 {
     public function execute(): View
     {

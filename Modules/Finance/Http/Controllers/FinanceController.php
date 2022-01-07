@@ -7,31 +7,31 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
-use Modules\Finance\Services\FinanceCreateService;
-use Modules\Finance\Services\FinanceIndexService;
-use Modules\Finance\Services\FinanceStoreService;
+use Modules\Finance\Services\CreateCashFlowService;
+use Modules\Finance\Services\GetCashFlowsService;
+use Modules\Finance\Services\StoreCashFlowService;
 
 class FinanceController extends Controller
 {
-    public function __construct(private FinanceIndexService $financeIndexService,
-                                private FinanceCreateService $financeCreateService,
-                                private FinanceStoreService $financeStoreService )
+    public function __construct(private GetCashFlowsService  $getCashFlowsService,
+                                private CreateCashFlowService $createCashFlowService,
+                                private StoreCashFlowService $storeCashFlowService )
     {
     }
 
     public function index(): View
     {
-        return $this->financeIndexService->execute();
+        return $this->getCashFlowsService->execute();
     }
 
     public function create(): View
     {
-        return $this->financeCreateService->execute();
+        return $this->createCashFlowService->execute();
     }
 
     public function store(Request $request): RedirectResponse
     {
-        return $this->financeStoreService->execute($request->all());
+        return $this->storeCashFlowService->execute($request->all());
     }
 
 

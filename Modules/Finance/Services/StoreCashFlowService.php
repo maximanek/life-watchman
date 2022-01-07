@@ -5,7 +5,7 @@ namespace Modules\Finance\Services;
 use Illuminate\Http\RedirectResponse;
 use Modules\Finance\Repositories\CashFlowRepository;
 
-class FinanceStoreService
+class StoreCashFlowService
 {
     public function __construct(private CashFlowRepository $cashFlowRepository)
     {

@@ -5,7 +5,7 @@ namespace Modules\Finance\Services;
 use Illuminate\View\View;
 use Modules\Finance\Repositories\CashFlowRepository;
 
-class FinanceIndexService
+class GetCashFlowsService
 {
 
     public function __construct(private CashFlowRepository $cashFlowRepository)

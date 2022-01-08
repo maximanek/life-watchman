@@ -10,7 +10,7 @@
                         <div class="mb-4">
                             <input
                                 class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="is_income" type="checkbox" name="is_income" value="1">
+                                id="is_income" type="checkbox" name="is_income" value="1" {{ $payment->is_income ? "checked" : "" }}>
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="is_income">
                                 {{ __('Income') }}
                             </label>
@@ -21,7 +21,7 @@
                             </label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="date" type="date" name="date" placeholder="Date" required >
+                                id="date" type="date" name="date" value="{{ $payment->date }}" placeholder="Date" required >
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="value">
@@ -29,7 +29,7 @@
                             </label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="value" type="number" step="0.01" name="value" placeholder="Amount of money" required >
+                                id="value" type="number" step="0.01" name="value" value="{{ $payment->value }}" placeholder="Amount of money" required >
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -37,7 +37,7 @@
                             </label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="name" type="text" name="name" placeholder="Name of payment" required >
+                                id="name" type="text" name="name" value="{{ $payment->name }}" placeholder="Name of payment" required >
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -62,7 +62,7 @@
                         <div class="mb-4">
                             <input
                                 class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="is_subscription" type="checkbox" name="is_subscription" value="1">
+                                id="is_subscription" type="checkbox" name="is_subscription" value="1" {{ $payment->is_subscription ? "checked" : "" }}>
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="is_subscription">
                                 {{ __('Subscription') }}
                             </label>

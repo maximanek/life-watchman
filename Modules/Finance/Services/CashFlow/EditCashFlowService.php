@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Finance\Services;
+namespace Modules\Finance\Services\CashFlow;
 
 use Illuminate\View\View;
 use Modules\Finance\Repositories\CashFlowRepository;

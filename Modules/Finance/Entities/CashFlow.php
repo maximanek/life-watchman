@@ -16,6 +16,7 @@ class CashFlow extends Model
         'sub_category_id',
         'value',
         'name',
+        'date',
         'is_subscription',
         'is_income',
     ];

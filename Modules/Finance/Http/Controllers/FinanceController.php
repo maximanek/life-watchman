@@ -6,12 +6,12 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
-use Modules\Finance\Services\CreateCashFlowService;
-use Modules\Finance\Services\DeleteCashFlowService;
-use Modules\Finance\Services\EditCashFlowService;
-use Modules\Finance\Services\GetCashFlowsService;
-use Modules\Finance\Services\StoreCashFlowService;
-use Modules\Finance\Services\UpdateCashFlowService;
+use Modules\Finance\Services\CashFlow\CreateCashFlowService;
+use Modules\Finance\Services\CashFlow\DeleteCashFlowService;
+use Modules\Finance\Services\CashFlow\EditCashFlowService;
+use Modules\Finance\Services\CashFlow\GetCashFlowsService;
+use Modules\Finance\Services\CashFlow\StoreCashFlowService;
+use Modules\Finance\Services\CashFlow\UpdateCashFlowService;
 
 class FinanceController extends Controller
 {
@@ -44,9 +44,9 @@ class FinanceController extends Controller
         return $this->editCashFlowService->execute($id);
     }
 
-    public function update(Request $request): RedirectResponse
+    public function update(Request $request, int $id): RedirectResponse
     {
-        return $this->updateCashFlowService->execute($request->all());
+        return $this->updateCashFlowService->execute($request->all(), $id);
     }
 
     public function delete(int $id): RedirectResponse

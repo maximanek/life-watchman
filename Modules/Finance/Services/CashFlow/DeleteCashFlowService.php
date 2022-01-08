@@ -1,20 +1,19 @@
 <?php
 
-namespace Modules\Finance\Services;
+namespace Modules\Finance\Services\CashFlow;
 
 use Illuminate\Http\RedirectResponse;
 use Modules\Finance\Repositories\CashFlowRepository;
 
-class UpdateCashFlowService
+class DeleteCashFlowService
 {
-
     public function __construct(private CashFlowRepository $cashFlowRepository)
     {
     }
 
-    public function execute(array $data, int $id): RedirectResponse
+    public function execute(int $id): RedirectResponse
     {
-        $this->cashFlowRepository->update($data, $id);
+        $this->cashFlowRepository->delete($id);
         return redirect()->route('finance.index');
     }
 }

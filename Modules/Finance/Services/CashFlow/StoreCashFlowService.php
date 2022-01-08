@@ -1,19 +1,20 @@
 <?php
 
-namespace Modules\Finance\Services;
+namespace Modules\Finance\Services\CashFlow;
 
 use Illuminate\Http\RedirectResponse;
 use Modules\Finance\Repositories\CashFlowRepository;
 
-class DeleteCashFlowService
+class StoreCashFlowService
 {
     public function __construct(private CashFlowRepository $cashFlowRepository)
     {
     }
-
-    public function execute(int $id): RedirectResponse
+    public function execute(array $data): RedirectResponse
     {
-        $this->cashFlowRepository->delete($id);
+        $this->cashFlowRepository->store($data);
         return redirect()->route('finance.index');
     }
+
+
 }

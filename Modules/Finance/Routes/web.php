@@ -20,6 +20,12 @@ Route::prefix('finance')->name('finance.')->group(function() {
     Route::get('/', [FinanceController::class, 'index'])->name('index');
     Route::get('/create', [FinanceController::class, 'create'])->name('create');
     Route::post('/create', [FinanceController::class, 'store']);
+    Route::prefix('/{id}')->group(function() {
+        Route::get('/edit', [FinanceController::class, 'edit'])->name('edit');
+        Route::post('/edit', [FinanceController::class, 'update']);
+        Route::delete('/delete', [FinanceController::class, 'delete']);
+    });
+
 
 
 });

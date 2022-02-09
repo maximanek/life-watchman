@@ -9,13 +9,12 @@
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-
-                </div>
             </div>
-
+            @foreach (Config::get('languages') as $lang =>  $language)
+                @if ($lang != App::getLocale())
+                    <a href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+            @endif
+            @endforeach
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
